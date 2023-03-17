@@ -1,4 +1,5 @@
 CALL data_fill();
+CALL schedule_maker();
 
 SELECT * FROM bank_accounts;
 SELECT * FROM beach_prices;
@@ -8,7 +9,7 @@ SELECT * FROM cashbox_checks;
 SELECT * FROM cashboxes;
 SELECT * FROM check_statuses;
 SELECT * FROM check_types;
-SELECT * FROM comissions;
+SELECT * FROM commissions;
 SELECT * FROM copero_payments;
 SELECT * FROM coperos;
 SELECT * FROM event_logs;

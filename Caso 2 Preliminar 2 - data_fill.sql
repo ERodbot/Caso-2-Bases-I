@@ -34,7 +34,6 @@ BEGIN
 			(bc_counter, bc_counter, name_select, FLOOR(RAND() * (99999999 - 10000000 + 1) + 10000000), 1, CURDATE(), CURDATE(), "me", "root", SHA2("password",256));
             
 		SET bc_counter = bc_counter + 1;
-        
 	END WHILE;
         
 	INSERT INTO beaches
@@ -83,7 +82,6 @@ BEGIN
 			(ipp_counter, 2000, ipp_counter, CURDATE(), "2023-04-16 11:45:00.000", CURDATE(), CURDATE(), "me", "root", SHA2("password",256));
 		
         SET ipp_counter = ipp_counter + 1;
-        
 	END WHILE;
     
 	INSERT INTO cars
@@ -110,7 +108,6 @@ BEGIN
 			(cb_counter, 10000, cb_counter, NULL, CURDATE(), CURDATE(), "credito");
             
 		SET cb_counter = cb_counter + 1;
-        
 	END WHILE;
 	
     WHILE iv_counter <= 15 DO
@@ -125,12 +122,26 @@ BEGIN
         SET iv_counter = iv_counter + 1;
 	END WHILE;
 
-
 	INSERT INTO beach_prices
 	VALUES
 		(1, CURDATE(), "2023-04-16 11:45:00.000", 3000, 1, 8, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
 		(2, CURDATE(), "2023-04-16 11:45:00.000", 3500, 2, 9, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
 		(3, CURDATE(), "2023-04-16 11:45:00.000", 2500, 3, 10, CURDATE(), CURDATE(), "me", "root", SHA2("password",256));
-    
+	INSERT INTO check_statuses
+    VALUES 
+		(1, "pendiente"),
+        (2, "correcto"),
+        (3, "diferencias");
+	
+    INSERT INTO check_types
+    VALUES 
+		(1, "cambio"),
+        (2, "verificacion");
+        
+	INSERT INTO commissions
+    VALUES
+		(1, 0.10, "2023-03-15", "2023-6-15", 1, SHA2("password",256), CURDATE(), CURDATE(), "me", "root"),
+        (2, 0.12, "2023-06-16", "2023-9-24", 0, SHA2("password",256), CURDATE(), CURDATE(), "me", "root");
+	
 END //
 DELIMITER ;
