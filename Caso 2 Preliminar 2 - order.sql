@@ -13,9 +13,9 @@ FROM beach_prices bp
 RIGHT JOIN price_logs pl ON bp.product_id = pl.product_id AND bp.beach_id = t_location
 WHERE pl.product_id = t_product_id;
 
-INSERT INTO orders (product_id, status, quantity)
+INSERT INTO orders (product_id, status, quantity, specific_location)
 VALUE
-	(t_product_id, 1, t_quantity);
+	(t_product_id, 1, t_quantity, t_location);
 
 SET last_insert_id = LAST_INSERT_ID();
 

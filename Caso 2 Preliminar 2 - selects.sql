@@ -1,5 +1,6 @@
 CALL data_fill();
 CALL schedule_maker();
+CALL sales_fill();
 
 SELECT * FROM bank_accounts;
 SELECT * FROM beach_prices;

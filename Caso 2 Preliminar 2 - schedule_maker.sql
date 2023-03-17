@@ -5,7 +5,7 @@ BEGIN
   DECLARE cur_date DATE;
   SET cur_date = '2023-03-15';
 
-  WHILE cur_date <= '2023-09-23' DO
+  WHILE cur_date <= '2023-09-15' DO
     INSERT INTO schedules (copero_id, carrito_id, playa_id, pickup_date, dropoff_date, pickup_location, dropoff_location, updated_at, created_at, computer, username, checksum)
     VALUES
 		(1, 1, 1, CONCAT(cur_date, " 09:00:00"), CONCAT(cur_date, " 13:00:00"), "Tamarindo", "Tamarindo", cur_date, cur_date, "me", "root", SHA2("password",256)),
