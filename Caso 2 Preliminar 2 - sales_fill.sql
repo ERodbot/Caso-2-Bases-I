@@ -11,7 +11,7 @@ BEGIN
   DECLARE beach_id INT;
   SET cur_date = '2023-03-14';
 
-  WHILE cur_date < '2023-9-15' DO
+  WHILE cur_date < '2023-3-15' DO
 	SET cur_date = DATE_ADD(cur_date, INTERVAL 1 DAY);
 	SET copero_counter = 0;
  	WHILE copero_counter < 30 DO
@@ -23,7 +23,7 @@ BEGIN
 				ELSE 3
 			END;
         SET sale_counter = 0;
-        SET sale_range = FLOOR(RAND() * (30 - 7 + 1)) + 7;
+        SET sale_range = 10;
 		WHILE sale_counter < sale_range DO
 			SET sale_counter = sale_counter + 1;
 			CALL `invoice`(copero_counter, cur_date, "efectivo", "compra", iv_id);
