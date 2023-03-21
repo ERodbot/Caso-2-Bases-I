@@ -5,10 +5,6 @@ BEGIN
 	DECLARE bc_counter INT DEFAULT 1;
     DECLARE ipp_counter INT DEFAULT 1;
     DECLARE name_select varchar(10);
-    DECLARE cb_counter INT DEFAULT 1;
-    DECLARE iv_counter INT DEFAULT 1;
-    DECLARE cyc_counter INT DEFAULT 1;
-    DECLARE it_counter INT DEFAULT 1;
     
     DROP TABLE IF EXISTS names;
     CREATE TEMPORARY TABLE names(
@@ -72,14 +68,14 @@ BEGIN
 	WHILE ipp_counter <=10 DO
 		INSERT INTO ingredients_per_products
 		VALUES
-			(ipp_counter, ipp_counter, 250, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
-			(ipp_counter,11, 500, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
-			(ipp_counter,12, 100, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
-			(ipp_counter,13, 50, CURDATE(), CURDATE(), "me", "root", SHA2("password",256));
+			(ipp_counter, ipp_counter, 100, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
+			(ipp_counter,11, 200, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
+			(ipp_counter,12, 50, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
+			(ipp_counter,13, 25, CURDATE(), CURDATE(), "me", "root", SHA2("password",256));
                 
 		INSERT INTO price_logs
 		VALUES
-			(ipp_counter, 2000, ipp_counter, CURDATE(), "2023-04-16 11:45:00.000", CURDATE(), CURDATE(), "me", "root", SHA2("password",256));
+			(ipp_counter, 2000.00, ipp_counter,"2023-03-15 00:00:00", "2023-09-16 11:45:00", CURDATE(), CURDATE(), "me", "root", SHA2("password",256));
 		
         SET ipp_counter = ipp_counter + 1;
 	END WHILE;
@@ -101,32 +97,12 @@ BEGIN
         (13, "celeste", 1, CURDATE(), CURDATE()),
         (14, "crema", 1, CURDATE(), CURDATE()),
         (15, "dorado", 1, CURDATE(), CURDATE());
-        
-	WHILE cb_counter <= 15 DO
-		INSERT INTO cashboxes
-		VALUE
-			(cb_counter, 10000, cb_counter, NULL, CURDATE(), CURDATE(), "credito");
-            
-		SET cb_counter = cb_counter + 1;
-	END WHILE;
-	
-    WHILE iv_counter <= 15 DO
-		SET it_counter = 1;
-		WHILE it_counter <=13 DO
-			INSERT INTO inventories
-				VALUES
-					(cyc_counter, iv_counter, it_counter, (FLOOR(RAND() * (2500 - 2000 + 1)) + 2000), CURDATE(), CURDATE(), "refill", NULL);
-			SET cyc_counter = cyc_counter + 1;
-            SET it_counter = it_counter + 1;
-        END WHILE;
-        SET iv_counter = iv_counter + 1;
-	END WHILE;
 
 	INSERT INTO beach_prices
 	VALUES
-		(1, CURDATE(), "2023-04-16 11:45:00.000", 3000, 1, 8, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
-		(2, CURDATE(), "2023-04-16 11:45:00.000", 3500, 2, 9, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
-		(3, CURDATE(), "2023-04-16 11:45:00.000", 2500, 3, 10, CURDATE(), CURDATE(), "me", "root", SHA2("password",256));
+		(1, "2023-03-15 00:00:00", "2023-09-16 11:45:00", 3000.00, 1, 8, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
+		(2, "2023-03-15 00:00:00", "2023-09-16 11:45:00", 3500.00, 2, 9, CURDATE(), CURDATE(), "me", "root", SHA2("password",256)),
+		(3, "2023-03-15 00:00:00", "2023-09-16 11:45:00", 2500.00, 3, 10, CURDATE(), CURDATE(), "me", "root", SHA2("password",256));
 	INSERT INTO check_statuses
     VALUES 
 		(1, "pendiente"),
@@ -136,12 +112,12 @@ BEGIN
     INSERT INTO check_types
     VALUES 
 		(1, "cambio"),
-        (2, "verificacion");
+        (2, "inicio");
         
 	INSERT INTO commissions
     VALUES
-		(1, 0.10, "2023-03-15", "2023-6-15", 1, SHA2("password",256), CURDATE(), CURDATE(), "me", "root"),
-        (2, 0.12, "2023-06-16", "2023-9-24", 0, SHA2("password",256), CURDATE(), CURDATE(), "me", "root");
+		(1, 0.10, "2023-03-15 00:00:00", "2023-06-15 00:00:00", 1, SHA2("password",256), CURDATE(), CURDATE(), "me", "root"),
+        (2, 0.12, "2023-06-16 00:00:00", "2023-09-17 00:00:00", 1, SHA2("password",256), CURDATE(), CURDATE(), "me", "root");
 	
 END //
 DELIMITER ;
