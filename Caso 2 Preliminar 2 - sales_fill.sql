@@ -94,7 +94,7 @@ BEGIN
                 
 			INSERT INTO inventories (car_id, ingredient_id, quantity, updated_at, created_at, operation_type)
             VALUE
-				(CEILING(copero_counter/2), 12, rand_prod_quant * 50, true_date, true_date);
+				(CEILING(copero_counter/2), 12, rand_prod_quant * 50, true_date, true_date, "venta");
 			SET last_insert_id_inv = LAST_INSERT_ID();
             
             INSERT INTO inventory_checks (check_status_id, check_type_id, first_copero, second_copero, updated_at, created_at, computer, username, checksum, real_amount, inventory_id)
