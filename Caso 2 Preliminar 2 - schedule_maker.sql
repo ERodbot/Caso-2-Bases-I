@@ -16,7 +16,7 @@ BEGIN
   SET cur_date = '2023-03-15';
   SET sha2_var = SHA2("password",256);
   
-  WHILE cur_date <= '2023-03-15' DO
+  WHILE cur_date <= '2023-09-15' DO
 	SET cur_date_mor = CONCAT(cur_date, " 09:00:00");
     SET cur_date_eve = CONCAT(cur_date, " 13:00:00");
 	SET cur_date_nit = CONCAT(cur_date, " 17:00:00");

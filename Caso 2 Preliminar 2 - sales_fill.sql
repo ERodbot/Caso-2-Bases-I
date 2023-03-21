@@ -23,7 +23,7 @@ BEGIN
   SET cur_date = '2023-03-14';
   SET sha2_var = SHA2("password",256);
   
-  WHILE cur_date < '2023-3-15' DO
+  WHILE cur_date < '2023-9-15' DO
 	SET cur_date = DATE_ADD(cur_date, INTERVAL 1 DAY);
 	SET copero_counter = 0;
  	WHILE copero_counter < 30 DO
