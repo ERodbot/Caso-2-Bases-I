@@ -1,4 +1,7 @@
 # Caso-2-Bases-I  
+Creado por:   
+Emanuel Rodriguez Oviedo - 2022108678  
+José Eduardo Gutiérrez Conejo – 2019073558  
 Archivos y su uso:  
 CASO2 consultas.sql: consultas para la comprobación de los datos dentro de la base de datos  
 Caso 2 Preeliminar 2 - sale_transactions.sql: Stored Procedure transaccinal para realizar una venta.  
@@ -9,4 +12,5 @@ Caso 2 Preliminar 2 - data_fill.sql: Script de llenado para información general
 Caso 2 Preliminar 2 - sales_fill.sql: Script de llenado para las ventas de 6 meses  
 Caso 2 Preliminar 2 - schedule_maker.sql: Script para el llenado de los harios entre copero y carrito, y refills de inventario y cashboxes  
 Caso 2 Preliminar 2 - udpdate_checks.sql: Script para actualizar los checks de inventarios a correcto o con diferencias dependiendo de si la cantidad real sobrepasa o no un limite porcentual definido  
+Caso 2 Final.pdf: Modelo en formato pdf
 Copos.mwb: Modelo de la base de datos.  
